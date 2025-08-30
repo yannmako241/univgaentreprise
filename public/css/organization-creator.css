@@ -1,0 +1,261 @@
+/* Organization Creator Styles */
+
+/* Modal Styles */
+.univga-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999999 !important;
+    backdrop-filter: blur(2px);
+    overflow: auto;
+}
+
+.univga-modal.show {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    animation: fadeIn 0.3s ease;
+    flex-direction: column !important;
+}
+
+.univga-modal-dialog {
+    background: white !important;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    animation: scaleIn 0.3s ease forwards;
+    position: relative !important;
+    margin: auto !important;
+    flex-shrink: 0 !important;
+}
+
+.univga-modal-header {
+    padding: 20px 20px 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.univga-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.univga-modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #666;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.univga-modal-close:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.univga-modal-body {
+    padding: 20px;
+}
+
+/* Form Styles */
+.univga-form-group {
+    margin-bottom: 20px;
+}
+
+.univga-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.univga-form-group input,
+.univga-form-group select,
+.univga-form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.univga-form-group input:focus,
+.univga-form-group select:focus,
+.univga-form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.univga-form-help {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.univga-form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Button Styles */
+.univga-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.univga-btn-primary {
+    background-color: #667eea;
+    color: white;
+}
+
+.univga-btn-primary:hover {
+    background-color: #5a67d8;
+    transform: translateY(-1px);
+}
+
+.univga-btn-secondary {
+    background-color: #f7fafc;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+}
+
+.univga-btn-secondary:hover {
+    background-color: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.univga-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Notification Styles */
+.univga-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    max-width: 400px;
+    padding: 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+
+.univga-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.univga-notification-content {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.univga-notification-success {
+    background-color: #f0fff4;
+    border: 1px solid #9ae6b4;
+    color: #276749;
+}
+
+.univga-notification-error {
+    background-color: #fed7d7;
+    border: 1px solid #feb2b2;
+    color: #c53030;
+}
+
+.univga-notification-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    color: currentColor;
+    opacity: 0.7;
+    line-height: 1;
+}
+
+.univga-notification-close:hover {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .univga-modal-dialog {
+        width: 95%;
+        margin: 20px 0;
+    }
+    
+    .univga-form-actions {
+        flex-direction: column;
+    }
+    
+    .univga-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .univga-notification {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
